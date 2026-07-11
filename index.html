@@ -58,6 +58,10 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .btn:hover {
@@ -87,11 +91,6 @@
             font-size: 1rem;
         }
 
-        .btn-admin:hover {
-            background-color: #ffffff;
-            color: #000;
-        }
-
         .btn span {
             margin-left: 10px;
         }
@@ -102,24 +101,49 @@
     <div class="glass-card">
         <h2>کانال‌های ارتباطی<br>افق کوروش شهر صنعتی</h2>
 
-        <!-- استفاده از پروتکل‌های اختصاصی برای باز شدن مستقیم اپلیکیشن -->
-        
-        <!-- بله: استفاده از ble:// برای باز شدن مستقیم -->
-        <a href="ble://ok_sanati" class="btn btn-bale"><span>🟢</span> بله</a>
+        <!-- دکمه‌ها حالا با تابع جاوااسکریپت کار می‌کنند -->
+        <button onclick="openApp('ble://ok_sanati', 'https://ble.ir/ok_sanati')" class="btn btn-bale">
+            <span>🟢</span> بله
+        </button>
 
-        <!-- روبیکا: استفاده از rubika:// برای باز شدن مستقیم -->
-        <a href="rubika://rubika.ir/ok_sanati" class="btn btn-rubika"><span>⚫</span> روبیکا</a>
+        <button onclick="openApp('rubika://rubika.ir/ok_sanati', 'https://rubika.ir/ok_sanati')" class="btn btn-rubika">
+            <span>⚫</span> روبیکا
+        </button>
 
-        <!-- ایتا: استفاده از eitaa:// برای باز شدن مستقیم -->
-        <a href="eitaa://eitaa.com/ok_sanati" class="btn btn-eitaa"><span>🟠</span> ایتا</a>
+        <button onclick="openApp('eitaa://eitaa.com/ok_sanati', 'https://eitaa.com/ok_sanati')" class="btn btn-eitaa">
+            <span>🟠</span> ایتا
+        </button>
 
         <div class="admin-section">
             <div class="admin-title">ارتباط با مدیریت</div>
-            <!-- برای مدیریت چون احتمالاً در تلگرام یا بله است، از پروتکل مربوطه استفاده کنید -->
-            <a href="ble://javad_badrkhani" class="btn btn-admin">👤 مدیر مجموعه</a>
+            <button onclick="openApp('ble://javad_badrkhani', 'https://ble.ir/javad_badrkhani')" class="btn btn-admin">
+                <span>👤</span> مدیر مجموعه
+            </button>
         </div>
     </div>
 
+    <script>
+        /**
+         * تابع هوشمند برای باز کردن اپلیکیشن
+         * @param {string} appScheme - پروتکل مخصوص اپلیکیشن (مثلاً ble://)
+         * @param {string} webUrl - لینک وب جایگزین (اگر اپلیکیشن نبود)
+         */
+        function openApp(appScheme, webUrl) {
+            // ۱. ذخیره زمان شروع برای تشخیص اینکه آیا صفحه عوض شده یا نه
+            var start = Date.now();
+
+            // ۲. تلاش برای باز کردن اپلیکیشن از طریق پروتکل اختصاصی
+            window.location.href = appScheme;
+
+            // ۳. ایجاد یک تایمر: اگر بعد از ۲ ثانیه کاربر هنوز در همین صفحه بود، 
+            // یعنی اپلیکیشن باز نشده (یا نصب نیست)، پس لینک وب را باز کن.
+            setTimeout(function() {
+                if (Date.now() - start < 2500) {
+                    window.location.href = webUrl;
+                }
+            }, 2000);
+        }
+    </script>
+
 </body>
 </html>
-
