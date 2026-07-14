@@ -3,199 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- بخش اصلی سئو برای گوگل - بسیار مهم -->
-    <title>افق کوروش صنعتی ساوه | کانال رسمی ایتا، روبیکا و بله</title> 
-    <meta name="description" content="کانال رسمی افق کوروش شعبه صنعتی ساوه. برای مشاهده جدیدترین محصولات، تخفیف‌ها و اطلاع از حراجی‌های افق کوروش در ساوه، عضو کانال‌های ایتا، روبیکا و بله ما شوید.">
-    <meta name="keywords" content="افق کوروش ساوه, افق کوروش صنعتی, افق کوروش ساوه ایتا, تخفیف افق کوروش, خرید از افق کوروش ساوه">
-    <meta name="author" content="افق کوروش صنعتی">
-
-    <!-- تنظیمات نمایش در شبکه‌های اجتماعی (Open Graph) -->
-    <meta property="og:title" content="کانال رسمی افق کوروش صنعتی ساوه">
-    <meta property="og:description" content="جدیدترین تخفیف‌ها و محصولات افق کوروش در ساوه را در ایتا دنبال کنید.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nonebic.github.io/my-link/">
+    
+    <!-- SEO Meta Tags -->
+    <title>افق کوروش صنعتی ساوه | @ok_sanati</title>
+    <meta name="description" content="افق کوروش صنعتی ساوه - مرجع تخصصی محصولات صنعتی در منطقه ساوه. برای دسترسی به آخرین محصولات و اخبار، کانال‌های ما را در ایتا و روبیکا دنبال کنید.">
+    <meta name="keywords" content="افق کوروش، افق کوروش ساوه، صنعتی ساوه, محصولات صنعتی, ok_sanati, کانال صنعتی">
+    <meta name="author" content="Oghab Korosh Sanati">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
 
-        /* انیمیشن پس‌زمینه متحرک */
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        :root {
+            --primary-color: #00d2ff;
+            --secondary-color: #3a7bd5;
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.25);
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Vazirmatn', Tahoma, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            font-family: 'Vazirmatn', sans-serif;
+            background: #0f2027; /* Fallback */
+            background: linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
+            overflow: hidden;
+            color: white;
+        }
+
+        /* انیمیشن پس‌زمینه */
+        .bg-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
             overflow: hidden;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 15s infinite alternate;
+        }
+
+        @keyframes float {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 100px); }
+        }
+
+        /* کارت اصلی شیشه‌ای */
+        .container {
+            background: var(--glass-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 45px 30px;
             border-radius: 40px;
-            padding: 35px 25px;
-            width: 350px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            position: relative;
+            width: 90%;
+            max-width: 380px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1.2s ease-out;
         }
 
-        /* بخش نمایش آیدی کانال */
-        .channel-id-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 15px;
-            border-radius: 50px;
-            color: #00d4ff;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        h2 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            line-height: 1.6;
+        h1 { 
+            font-size: 1.7rem; 
+            margin: 0 0 10px 0; 
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .description {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.8;
         }
+
+        .channel-id-badge {
+            background: rgba(0, 210, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 35px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            font-size: 1.1rem;
+        }
+
+        /* استایل دکمه‌ها */
+        .btn-group { display: flex; flex-direction: column; gap: 15px; }
 
         .btn {
+            position: relative;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 20px;
             text-decoration: none;
             color: white;
-            padding: 15px 25px;
-            border-radius: 18px;
-            font-size: 1.05rem;
             font-weight: 500;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
-            width: 100%;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
 
-        .btn:active {
-            transform: scale(0.95);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        /* استایل اختصاصی هر دکمه با گرادینت */
-        .btn-bale { background: linear-gradient(90deg, #2ecc71, #27ae60); }
-        .btn-rubika { background: linear-gradient(90deg, #2c3e50, #000000); }
-        .btn-eitaa { background: linear-gradient(90deg, #f39c12, #d35400); }
-
-        .btn span {
-            font-size: 1.4rem;
-            margin-left: 15px;
-        }
-
-        .admin-section {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .admin-title {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+        .btn-eitaa {
+            background: linear-gradient(135deg, #ff8c00, #e67e22);
+            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
         }
 
         .btn-admin {
             background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            justify-content: center;
+            border: 1px solid var(--glass-border);
         }
 
-        .btn-admin:hover {
-            background: white;
-            color: black;
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
         }
+
+        .btn:active { transform: scale(0.96); }
+
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            font-weight: 300;
+        }
+
+        /* آیکون کوچک برای دکمه‌ها */
+        .icon { font-size: 1.2rem; }
 
     </style>
 </head>
 <body>
 
-    <div class="glass-card">
-        <!-- نمایش آیدی کانال برای کاربر -->
-        <div class="channel-id-badge">ID: @ok_sanati</div>
-        
-        <h2>کانال‌های ارتباطی<br>افق کوروش شهر صنعتی</h2>
+<!-- پس‌زمینه متحرک -->
+<div class="bg-animation">
+    <div class="circle" style="width: 300px; height: 300px; top: -10%; left: -10%;"></div>
+    <div class="circle" style="width: 400px; height: 400px; bottom: -10%; right: -10%; animation-delay: -5s;"></div>
+</div>
 
-        <div class="btn-container">
-            <!-- دکمه‌ها -->
-            <button onclick="smartOpen('ble://ok_sanati', 'https://ble.ir/ok_sanati')" class="btn btn-bale">
-                <span>🟢</span> بله
-            </button>
+<div class="container">
+    <!-- کلمات کلیدی در هدر برای سئو -->
+    <h1>افق کوروش صنعتی</h1>
+    <p class="description">تامین تجهیزات صنعتی در شهر ساوه</p>
+    
+    <div class="channel-id-badge">@ok_sanati</div>
 
-            <button onclick="smartOpen('rubika://rubika.ir/ok_sanati', 'https://rubika.ir/ok_sanati')" class="btn btn-rubika">
-                <span>⚫</span> روبیکا
-            </button>
+    <div class="btn-group">
+        <!-- دکمه ایتا -->
+        <button onclick="openApp('eitaa', 'ok_sanati')" class="btn btn-eitaa">
+            <span class="icon">🚀</span> ورود به کانال ایتا
+        </button>
 
-            <button onclick="smartOpen('eitaa://eitaa.com/ok_sanati', 'https://eitaa.com/ok_sanati')" class="btn btn-eitaa">
-                <span>🟠</span> ایتا
-            </button>
-        </div>
-
-        <div class="admin-section">
-            <div class="admin-title">مدیریت مجموعه</div>
-            <button onclick="smartOpen('ble://javad_badrkhani', 'https://ble.ir/javad_badrkhani')" class="btn btn-admin">
-                <span>👤</span> مدیر مجموعه
-            </button>
-        </div>
+        <!-- دکمه مدیریت -->
+        <button onclick="openApp('eitaa', 'None_lock')" class="btn btn-admin">
+            <span class="icon">👨‍💼</span> ارتباط با مدیریت
+        </button>
     </div>
 
-    <script>
-        /**
-         * تابع هوشمند باز کردن اپلیکیشن
-         * این تابع تلاش می‌کند ابتدا پروتکل اپلیکیشن را اجرا کند،
-         * اگر اپلیکیشن نصب نباشد و بعد از ۲ ثانیه کاربر در صفحه باقی ماند، لینک وب را باز می‌کند.
-         */
-        function smartOpen(appScheme, webUrl) {
-            const start = Date.now();
-            
-            // تلاش اول: باز کردن با پروتکل اپلیکیشن
-            window.location.assign(appScheme);
+    <div class="footer-text">
+        آیدی این کانال در پیام‌رسان‌های ایرانی موجود است.
+    </div>
+</div>
 
-            // تلاش دوم: اگر اپلیکیشن باز نشد، بعد از ۲ ثانیه لینک وب را باز کن
+<script>
+    function openApp(platform, id) {
+        // تلاش برای باز کردن اپلیکیشن (Deep Link)
+        if (platform === 'eitaa') {
+            // سعی برای باز کردن چت یا کانال
+            window.location.href = `eitaa://view?member_id=${id}`;
+            
+            // اگر بعد از 800 میلی ثانیه باز نشد، به نسخه وب برود
             setTimeout(() => {
-                // اگر زمان سپری شده بیشتر از ۲.۵ ثانیه است، یعنی اپلیکیشن باز نشده (کاربر از صفحه خارج نشده)
-                if (Date.now() - start < 2500) {
-                    window.location.href = webUrl;
-                }
-            }, 1000);
+                window.location.href = `https://eitaa.com/${id}`;
+            }, 800);
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
