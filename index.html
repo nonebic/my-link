@@ -4,57 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>افق کوروش ساوه | شهرک صنعتی کاوه</title>
-    <!-- استفاده از فونت Vazirmatn -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Vazirmatn', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #ffffff;
+        body { 
+            margin: 0; padding: 0; font-family: 'Vazirmatn', sans-serif; 
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+            display: flex; justify-content: center; align-items: center; 
+            min-height: 100vh; color: #ffffff; 
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            border-radius: 25px;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.2); padding: 30px; 
+            border-radius: 25px; text-align: center; width: 90%; 
+            max-width: 400px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
         }
         h1 { margin: 0 0 10px 0; font-size: 1.5rem; color: #ffcc00; }
         .desc { font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9; }
-        .address-box {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin-bottom: 25px;
-            border-right: 4px solid #ffcc00;
+        .address-box { 
+            background: rgba(0, 0, 0, 0.2); padding: 15px; 
+            border-radius: 15px; font-size: 0.85rem; margin-bottom: 25px; 
+            border-right: 4px solid #ffcc00; 
         }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 12px;
-            background: #ffffff;
-            color: #203a43;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: 'Vazirmatn';
-            font-size: 1rem;
+        /* تغییر استایل به تگ لینک که مانند دکمه عمل می‌کند */
+        .btn { 
+            display: block; width: 100%; padding: 15px; margin: 15px 0; 
+            border-radius: 12px; background: #ffffff; color: #203a43; 
+            font-weight: bold; text-decoration: none; text-align: center;
+            transition: all 0.3s ease; border: none; font-family: 'Vazirmatn'; 
+            font-size: 1rem; box-sizing: border-box;
         }
         .btn:hover { background: #ffcc00; transform: translateY(-2px); }
         .footer-text { font-size: 0.75rem; opacity: 0.6; margin-top: 20px; }
@@ -65,24 +42,18 @@
     <div class="glass-card">
         <h1>افق کوروش</h1>
         <p class="desc">شعبه شهرک صنعتی کاوه</p>
-        
+
         <div class="address-box">
             📍 آدرس: ساوه، ورودی دوم شهرک صنعتی کاوه، بعد از گمرک، میدان امام خمینی
         </div>
 
-        <!-- لینک‌ها با استفاده از متد جاوااسکریپت برای بهبود عملکرد در اپلیکیشن‌ها -->
-        <button class="btn" onclick="openLink('https://eitaa.com/s/ok_sanati')">ورود به کانال ایتا (@ok_sanati)</button>
-        <button class="btn" onclick="openLink('https://eitaa.com/None_lock')">ارتباط با مدیریت (@None_lock)</button>
-        
-        <div class="footer-text">آیدی این کانال در پیام‌رسان‌های ایرانی موجود است.</div>
+        <!-- استفاده از تگ a به جای دکمه برای جلوگیری از قفل شدن -->
+        <a href="https://eitaa.com/s/ok_sanati" class="btn" target="_blank">ورود به کانال ایتا</a>
+        <a href="https://rubika.ir/ok_sanati" class="btn" target="_blank">ورود به کانال روبیکا</a>
+        <a href="https://eitaa.com/None_lock" class="btn" target="_blank">ارتباط با مدیریت (ایتا)</a>
+
+        <div class="footer-text">در صورت باز نشدن، لینک را کپی کرده و در مرورگر باز کنید.</div>
     </div>
 
-    <script>
-        function openLink(url) {
-            // تلاش برای باز کردن لینک در پنجره جدید
-            // این کار باعث می‌شود مرورگر پیش‌فرض سیستم عامل فراخوانی شود
-            window.open(url, '_blank');
-        }
-    </script>
 </body>
 </html>
