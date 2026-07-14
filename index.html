@@ -3,83 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>افق کوروش | شعبه شهرک صنعتی کاوه</title>
-    <meta name="description" content="فروشگاه افق کوروش شعبه شهرک صنعتی کاوه ساوه. آدرس: ورودی دوم شهرک صنعتی کاوه، بعد از گمرک، میدان امام خمینی. دسترسی سریع به کانال و مدیریت.">
-    <meta name="keywords" content="افق کوروش ساوه, افق کوروش شهرک صنعتی کاوه, فروشگاه افق کوروش, ساوه, گمرک ساوه">
+    <title>افق کوروش ساوه | شهرک صنعتی کاوه</title>
+    <!-- استفاده از فونت Vazirmatn -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" rel="stylesheet">
     <style>
-        :root { --glass: rgba(255, 255, 255, 0.08); }
         body {
             margin: 0;
+            padding: 0;
             font-family: 'Vazirmatn', sans-serif;
-            background: radial-gradient(circle at top right, #1e3c72, #2a5298);
-            height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            min-height: 100vh;
+            color: #ffffff;
         }
-        .container {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 30px;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 25px;
             text-align: center;
-            width: 85%;
+            width: 90%;
             max-width: 400px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-        h1 { font-size: 1.4rem; margin-bottom: 5px; color: #ffd700; }
-        .address { font-size: 0.9rem; opacity: 0.8; margin-bottom: 25px; line-height: 1.6; }
+        h1 { margin: 0 0 10px 0; font-size: 1.5rem; color: #ffcc00; }
+        .desc { font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9; }
+        .address-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+            border-right: 4px solid #ffcc00;
+        }
         .btn {
             display: block;
             width: 100%;
             padding: 15px;
-            margin: 12px 0;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            margin: 15px 0;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #203a43;
             font-weight: bold;
             text-decoration: none;
-            transition: 0.4s;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Vazirmatn';
+            font-size: 1rem;
         }
-        .btn:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-3px); }
-        .footer { font-size: 0.75rem; margin-top: 25px; opacity: 0.6; }
+        .btn:hover { background: #ffcc00; transform: translateY(-2px); }
+        .footer-text { font-size: 0.75rem; opacity: 0.6; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="glass-card">
         <h1>افق کوروش</h1>
-        <p style="font-size: 0.8rem; margin-bottom: 15px;">شعبه شهرک صنعتی کاوه</p>
-        <div class="address">
-            آدرس: ساوه، شهرک صنعتی کاوه، ورودی دوم، بعد از گمرک، میدان امام خمینی
+        <p class="desc">شعبه شهرک صنعتی کاوه</p>
+        
+        <div class="address-box">
+            📍 آدرس: ساوه، ورودی دوم شهرک صنعتی کاوه، بعد از گمرک، میدان امام خمینی
         </div>
 
-        <button class="btn" onclick="openApp('ok_sanati')">ورود به کانال ایتا (@ok_sanati)</button>
-        <button class="btn" onclick="openApp('None_lock')">ارتباط با مدیریت (@None_lock)</button>
+        <!-- لینک‌ها با استفاده از متد جاوااسکریپت برای بهبود عملکرد در اپلیکیشن‌ها -->
+        <button class="btn" onclick="openLink('https://eitaa.com/ok_sanati')">ورود به کانال ایتا (@ok_sanati)</button>
+        <button class="btn" onclick="openLink('https://eitaa.com/None_lock')">ارتباط با مدیریت (@None_lock)</button>
         
-        <div class="footer">این کانال در تمامی پیام‌رسان‌های ایرانی در دسترس است.</div>
+        <div class="footer-text">آیدی این کانال در پیام‌رسان‌های ایرانی موجود است.</div>
     </div>
 
     <script>
-        function openApp(id) {
-            // استفاده از پروتکل اینتنت برای خروج از مرورگر داخلی و باز کردن مستقیم در اپلیکیشن
-            const intentUrl = `intent://eitaa.com/${id}#Intent;scheme=https;package=com.eitaa.android;end`;
-            
-            // تلاش اول: باز کردن از طریق پروتکل ایتا
-            window.location.href = `eitaa://view?member_id=${id}`;
-
-            // تلاش دوم: اگر باز نشد، هدایت به اپلیکیشن از طریق اینتنت یا وب
-            setTimeout(() => {
-                if (/Android/i.test(navigator.userAgent)) {
-                    window.location.href = intentUrl;
-                } else {
-                    window.location.href = `https://eitaa.com/${id}`;
-                }
-            }, 600);
+        function openLink(url) {
+            // تلاش برای باز کردن لینک در پنجره جدید
+            // این کار باعث می‌شود مرورگر پیش‌فرض سیستم عامل فراخوانی شود
+            window.open(url, '_blank');
         }
     </script>
 </body>
